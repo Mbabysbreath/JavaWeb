@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById</title>
+    <!--/* * 需 求 ： 当 用 户 点 击 了 较 验 按 钮 ， 要 获 取 输 出 框 中 的 内 容 。
+    然 后 验 证 其 是 否 合 法 。
+    <br/> * 验 证 的 规 则 是 ：必须由字母，数字 。下划线组成 。
+    并 且 长 度 是 5 到 12 位 。 -->
+    <script type="text/javascript">
+        function onclickFun() {
+            //1.当我们要操作一个标签时，要先获取这个标签对象
+            var usernameObj=document.getElementById("username");
+            //2.获取内容
+            var usernameText=usernameObj.value;
+           // alert(usernameText);
+            //3.验证字符串是否符合规则--正则表达式
+            var patt=/^\w{5,12}$/;
+            var spanObj=document.getElementById("span");
+            //innerHTML获取起始标签和结束标签之间的内容，可读可写
+            var str=spanObj.innerHTML;
+            //test()方法用于测试某个字符串是否匹配正则表达式的规则
+            if(patt.test(usernameText)){
+                //alert("用户名合法");
+                //spanObj.innerHTML="用户名合法";
+
+                spanObj.innerHTML="<img src='right.png' width='18' height='18'>";
+            }else{
+                // alert("用户名不合法")
+                //spanObj.innerHTML="用户名不合法";
+                spanObj.innerHTML="<img src='wrong.png' width='18' height='18'>";
+            }
+
+        }
+    </script>
+</head>
+<body>
+用户名：<input type="text" id="username" value="wyb" >
+<span id="span" style="color:red;"></span></br>
+<button onclick="onclickFun()">校验</button>
+</body>
+</html>

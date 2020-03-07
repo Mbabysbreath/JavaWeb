@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onchange</title>
+    <script type="text/javascript">
+        function onchangeFun() {
+            alert("女神变了");
+        }
+        window.onload = function () {
+            var onSele=document.getElementById("select");
+            onSele.onchange=function () {
+                alert("男神变了");
+            }
+        }
+    </script>
+</head>
+<body>
+<pre>女神的选择</pre>
+<select onchange="onchangeFun()">
+    <option>--请选择--</option>
+    <option>热巴</option>
+    <option>涂山苏苏</option>
+    <option>少司命</option>
+    </hr>
+</select>
+
+    <pre>男神的选择</pre>
+<select id="select">
+        <option>--请选择--</option>
+        <option>王一博</option>
+        <option>肖战</option>
+        <option>蓝忘机</option>
+        <option>魏无羡</option>
+</select>
+
+</body>
+</html>

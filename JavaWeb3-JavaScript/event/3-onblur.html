@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onblur</title>
+    <script type="text/javascript">
+        function onblueFun() {
+            //console是控制台对象，有JavaScript语言提供，专门用来向浏览器打印输出，用于测试使用
+            //log:是打印的方法
+            console.log("静态注册onblur");
+        }
+
+        window.onload=function () {
+            //1.先获取dom对象
+            var onB=document.getElementById("pas");
+            //2.对象.事件名=function(){}
+            onB.onblur=function () {
+                console.log("动态注册onblur")
+            }
+        }
+    </script>
+</head>
+<body>
+用户名:<input type="text" onblur="onblueFun()" ><br/>
+密码<input type="password" id="pas"><br/>
+</body>
+</html>

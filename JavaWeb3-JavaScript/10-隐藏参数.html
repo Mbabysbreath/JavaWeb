@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏参数</title>
+    <script type="text/javascript">
+        function fun1() {
+            // alert(arguments[0]);
+            // alert(arguments[1]);
+            // alert(arguments[2]);
+            alert(arguments.length);
+        }
+        //fun1(1,2,"3");
+
+        //需 求 ： 要 求 编 写 一 个 函 数 。 用 于 计 算 所 有 参 数 相 加 的 和 并 返 回
+        function sum(a,b) {
+            var res=0;
+            for(var i=0;i<arguments.length;i++){
+                res+=arguments[i];
+            }
+            return res;
+        }
+        alert(sum(1,2,3,4,5,6,7,8,9));
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

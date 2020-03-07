@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <script type="text/javascript">
+        //怎么创建一个正则表达式的对象
+        var patt=new RegExp("e");
+        var patt2=/e/;
+       // alert(patt2);
+
+        var str="qwe";
+        var str1=123;
+        //alert(patt2.test(str));
+       // alert(patt2.test(str1));
+//表示要求字符串包含[]中的任意一个字符
+        var patt3=/[qwe]/;
+        var str2="dfq";
+        //alert(patt3.test(str2));
+        var patt4=/[a-z]/;
+        //alert(patt4.test(str2));
+        var patt5=/[0-9]/;
+        var str3=123;
+       // alert(patt5.test(str3));
+
+        //w，要求字符串中的内容都是字母、数字、下划线
+        //var patt6=/\w/;
+        //n+ 匹配任何包含至少一个 n 的字符串。
+        //
+        //n* 匹配任何包含零个或多个 n 的字符串。
+       // var patt6=/a*/;
+        //n? 匹配任何包含零个或一个 n 的字符串。
+        //var patt6=/a?/;
+        //n{X}匹配包含 X 个 n 的序列的字符串。
+       // var patt6=/a{3}/;
+        // n{X,Y}匹配包含 X 或 Y 个 n 的序列的字符串。
+        //var patt6=/a{3,5}/;
+        //n{X,}匹配包含至少 X 个 n 的序列的字符串。
+       // var  patt6=/a{3,}/
+        // n$ 匹配任何结尾为 n 的字符串。
+       // var  patt6=/a$/
+        // ^n 匹配任何开头为 n 的字符串。
+        var  patt6=/^a/
+        var patt=/^\w{5,12}$/;
+        alert(patt6.test("aaS12_"));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

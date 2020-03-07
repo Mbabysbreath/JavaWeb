@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>geyElementsByName</title>
+    <script type="text/javascript">
+
+       // alert(doms);
+        function checkAll() {
+            var doms=document.getElementsByName("hobby");
+            for(var i=0;i<doms.length;i++){
+                //checked属性可读可写,表示复选框的选中状态
+                doms[i].checked=true;
+            }
+        }
+        function checkNo() {
+            var doms=document.getElementsByName("hobby");
+            //alert(doms);
+            for(var i=0;i<doms.length;i++){
+                //checked属性可读可写
+                doms[i].checked=false;
+            }
+        }
+        function checkreverse() {
+            var doms=document.getElementsByName("hobby");
+            for(var i=0;i<doms.length;i++){
+                //checked属性可读可写
+                doms[i].checked=!doms[i].checked;
+            }
+        }
+    </script>
+</head>
+<body>
+ 个人爱好：
+<input type="checkbox" name="hobby" value="C++" checked="checked">C++
+<input type="checkbox" name="hobby" value="Java">Java
+<input type="checkbox" name="hobby" value="Python">Python
+<br/>
+<button onclick="checkAll()">全选</button>
+<button onclick="checkNo()">全不选</button>
+<button onclick="checkreverse()">反选</button>
+</body>
+</html>
