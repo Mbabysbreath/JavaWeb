@@ -3,13 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>name</param-value>
+    </context-param>
     <!--servlet标签是给Tomcat配置Servlet程序-->
     <servlet>
         <!--给servlet程序取一个别名-->
         <servlet-name>HelloServlet</servlet-name>
         <!--Servlet程序的全类名-->
         <servlet-class>servlet01.HelloServlet</servlet-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://localhost:3306</param-value>
+        </init-param>
     </servlet>
+
     <!--servlet-mapping 标签是给servlet程序配置访问地址-->
     <servlet-mapping>
         <!--servlet-name 标签是告诉服务器，我们现在配置的地址是给那个Servlet程序使用的-->
@@ -18,6 +32,115 @@
         <!--/ 斜杠在服务器介绍时，表示的地址是：http://ip:port/工程路径 </br>
             /hello 资源路径，表示的地址 http://ip:port/工程路径/hello-->
         <url-pattern>/hello</url-pattern>
+
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet2</servlet-name>
+        <servlet-class>servlet01.HelloServlet2</servlet-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>HelloServlet3</servlet-name>
+        <servlet-class>servlet01.HelloServlet3</servlet-class>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://3306</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet4</servlet-name>
+        <servlet-class>servlet01.Servlet4</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet5</servlet-name>
+        <servlet-class>servlet01.Servlet5</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet3</servlet-name>
+        <url-pattern>/hello3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet4</servlet-name>
+        <url-pattern>/hello4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet5</servlet-name>
+        <url-pattern>/hello5</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RequestAPI</servlet-name>
+        <servlet-class>servlet02.RequestAPI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestAPI</servlet-name>
+        <url-pattern>/request</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ParameterAPI</servlet-name>
+        <servlet-class>servlet02.ParameterAPI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParameterAPI</servlet-name>
+        <url-pattern>/parameter</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet1</servlet-name>
+        <servlet-class>servlet03.Servlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1</servlet-name>
+        <url-pattern>/servlet1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet2</servlet-name>
+        <servlet-class>servlet03.Servlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet2</servlet-name>
+        <url-pattern>/servlet2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ForwardC</servlet-name>
+        <servlet-class>servlet03.ForwardC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForwardC</servlet-name>
+        <url-pattern>/forwardC</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HttpServletResonse1</servlet-name>
+        <servlet-class>servlet04.HttpServletResonse1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HttpServletResonse1</servlet-name>
+        <url-pattern>/httpServletResonse1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Response1</servlet-name>
+        <servlet-class>servlet04.Response1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Response1</servlet-name>
+        <url-pattern>/response1</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>Response2</servlet-name>
+        <servlet-class>servlet04.Response2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Response2</servlet-name>
+        <url-pattern>/response2</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -22,11 +22,22 @@ public class HelloServlet implements Servlet {
         System.out.println("1.构造器");
     }
 
+    /**
+     * ServletConfig的作用：
+     * （1）获取Servlet的别名
+     * （2）获取初始化参数
+     * （3）获取ServletContext对象
+     *
+     */
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         System.out.println("2.init()初始化过程");
+        System.out.println("Servlet的别名："+servletConfig.getServletName());
+        System.out.println("Servlet的初始化参数：" + servletConfig.getInitParameter("username"));
+        System.out.println("Servlet的初始化参数2：" + servletConfig.getInitParameter("url"));
+        System.out.println("Servler的Context对象："+servletConfig.getServletContext());
     }
-
+ 
     @Override
     public ServletConfig getServletConfig() {
         return null;
